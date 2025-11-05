@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  * {
+  box-sizing: border-box;
+}
+.menu {
+  float: left;
+  width: 20%;
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+}
+    nav{
+        background-color:#272727;
+        height:80px;
+        display:flex;
+        padding:5px;
+        justify-content:space-between;
+         box-shadow: 0 4px 8px 0 rgba(235, 234, 234, 0.925), 0 6px 20px 0 rgba(248, 248, 248, 0.836);
+    }
+    .img{
+        margin-top:10px;
+        margin-left:10px;
+    }
+    .img img{
+        height:50px;
+        margn-top:5px;
+    }
+    ul{
+        display:flex;
+    }
+    ul li{
+        margin-right:20px;
+        list-style:none;
+    
+    }
+    .list{
+        margin-top:15px;
+    }
+    ul li a{
+        color:white;
+        text-decoration:none;
+    }
+    #cont{
+        background-color:#323232;
+        width:40%;
+        height:500px;
+        padding:10px;   
+        color:white;
+    }
+    .main{
+        background-color:#323232;
+        display:flex;
+
+    }
+    .formcontainer{
+        background-color:none;
+        width:60%;
+        height:500px;
+    }
+    .form{
+        background-color:#f1f1f1;
+        width:70%;
+        margin-left:15%;
+        margin-top:60px;
+        height:400px;
+        padding:10px;
+        border-radius:20px;
+       
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+    .form h2{
+        text-align:center;
+    }
+    .innerform{
+        margin-left:30px;
+    }
+    #name{
+        width:400px;
+        margin-left:25px;
+        height:20px;
+    }
+    #addr{
+        width:400px;
+        margin-left:10px;
+        height:20px;
+    }
+    #phone{
+        width:400px;
+        margin-left:0px;
+        height:20px;
+    }
+    #email{
+        width:400px;
+        margin-left:25px;
+        height:20px;
+    }
+    #course{
+        width:410px;
+        margin-left:20px;
+        height:25px;
+    }
+    #btn{
+        width:20%;
+        margin-left:40%;
+        height:25px;
+    }
+    .outputcont{
+        background-color:#323232;
+        margin-top:40px;
+        font-size:20px;
+        padding:20px;
+        text-align:justify;
+    }
+ @media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+.hh{
+    border-color:white;
+    background-color:white;
+    width:1px;
+    height:450px;
+    margin-top:25px;
+}
+footer{
+    background-color:#272727;
+    text-align:center;
+    color:white;
+    padding:30px;
+}
+footer img{
+    height:30px;
+    transition:0.2s;
+}
+footer img:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+  
+</style>
+<body>
+    <nav>
+        <di class="img">
+        <img src="logo.jpeg" alt="">
+        </di>
+        <div class="list">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            
+        </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="formcontainer">
+            <div class="form">
+                <h2>Admission Form</h2>
+                <div class="innerform">
+    <form onsubmit="return false;">
+        Name: <input type="text" id="name"><br><br>
+        Address: <input type="text" id="addr"><br><br>
+        Phone No: <input type="text" id="phone"><br><br>
+        Email: <input type="text" id="email"><br><br>
+        course: <select name="" id="course">
+            <option value="DCA">DCA</option>
+            <option value="CCA">CCA</option>
+            <option value="TALLY">TALLY</option>
+        </select><br><br>
+        <button id="btn" onclick="getdata()">submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    <div class="hh">
+   
+    </div>
+    <div id="cont">
+        <div class="outputcont">
+        Pitech Computer, also known as Pitech Education, is a computer training institute based in Tadong, Gangtok, Sikkim. It is an ISO 9001:2015 certified institution that emphasizes practical and industry-relevant training. Pitech has received positive reviews from students and appears to be a well-regarded option for computer education in the region.
+        <p id="output"></p>
+    </div>
+    </div>
+    </div>
+
+</body>
+<footer>
+     <img src="logo.jpeg" alt="">
+     <p>Contact Us:<br>
+     9800901230, 8768915410, 9732055833</p>
+     <p>Email:<br>
+     pitechcomputer@gmail.com, pitecheducation@gmail.com</p>
+     <p>Website:<br>
+     Pitechecudation.in</p>
+</footer>
+<script>
+    function getdata(){
+        let student={
+            name:document.getElementById("name").value,
+            addr:document.getElementById("addr").value,
+            phone:document.getElementById("phone").value,
+            email:document.getElementById("email").value,
+            course:document.getElementById("course").value,
+        };
+        document.getElementById("output").innerHTML="Your Details:"+"<hr>"+"<br>"
+                                                    +" Your Name: "+student.name+"<br>"
+                                                    +"Address: "+student.addr+"<br>"
+                                                   + "Phone Number: "+student.phone+"<br>"
+                                                    +"Email: "+student.email+"<br>"
+                                                    +"Course: "+student.course+"<br>";
+    }
+</script>
+
+</html>
